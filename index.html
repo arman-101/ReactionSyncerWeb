@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReactionSyncer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/favicon.png">
+</head>
+<body>
+    <div class="container text-center my-5">
+        <div class="video-container d-flex justify-content-between mb-4">
+            <div class="video-wrapper resizable" id="videoWrapper1">
+                <video id="videoPlayer1" class="video-player" controls></video>
+                <div class="resize-handle"></div>
+            </div>
+            <div class="video-wrapper resizable" id="videoWrapper2">
+                <video id="videoPlayer2" class="video-player" controls></video>
+                <div class="resize-handle"></div>
+            </div>
+        </div>
+        
+        <div class="file-inputs row justify-content-center mb-4">
+            <div class="col-md-4">
+                <div class="custom-file">
+                    <input type="file" id="videoInput1" class="custom-file-input" accept="video/*">
+                    <label class="custom-file-label" for="videoInput1">Pick Left Video</label>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="custom-file">
+                    <input type="file" id="videoInput2" class="custom-file-input" accept="video/*">
+                    <label class="custom-file-label" for="videoInput2">Pick Right Video</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls d-flex justify-content-center align-items-center">
+            <button id="fiveMinBackButton" class="btn btn-dark mx-2">
+                <img src="green icons/5 backward.png" alt="5 Min Back" class="control-icon">
+            </button>
+            <button id="rewindButton" class="btn btn-dark mx-2">
+                <img src="green icons/15 backward.png" alt="15 Sec Back" class="control-icon">
+            </button>
+            <button id="playPauseButton" class="btn btn-dark mx-2">
+                <img src="green icons/play.png" alt="Play/Pause" class="control-icon">
+            </button>
+            <button id="forwardButton" class="btn btn-dark mx-2">
+                <img src="green icons/15 forward.png" alt="15 Sec Forward" class="control-icon">
+            </button>
+            <button id="fiveMinForwardButton" class="btn btn-dark mx-2">
+                <img src="green icons/5 forward.png" alt="5 Min Forward" class="control-icon">
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="mailto:arman-101@hotmail.com">Contact</a></li>
+                <li><a href="https://paypal.me/AShakir362?country.x=GB&locale.x=en_GB" target="_blank">Donate</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
