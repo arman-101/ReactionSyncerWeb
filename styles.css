@@ -17,14 +17,6 @@ body {
     margin-bottom: 20px;
 }
 
-.video-wrapper {
-    position: relative;
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    overflow: hidden; /* Prevents content overflow */
-}
-
 .video-player {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -153,4 +145,25 @@ footer {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+.video-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; /* Prevents content overflow */
+    resize: both; /* Allow resizing in both directions */
+    overflow: auto;
+}
+
+.resize-handle {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ffffff; /* Color of resize handle */
+    cursor: nwse-resize;
+    border-radius: 50%;
+    bottom: 0;
+    right: 0;
+    z-index: 10; /* Ensure it's above other content */
 }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const videoPlayer1 = document.getElementById('videoPlayer1');
     const videoPlayer2 = document.getElementById('videoPlayer2');
-    
+
     const videoInput1 = document.getElementById('videoInput1');
     const videoInput2 = document.getElementById('videoInput2');
 
@@ -85,10 +85,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resizableElements.forEach(element => {
         const handle = element.querySelector('.resize-handle');
         let isResizing = false;
+        let isProportional = true; // Start with proportional resizing
         let startX, startY, startWidth, startHeight;
 
         handle.addEventListener('mousedown', (e) => {
             isResizing = true;
+            isProportional = e.shiftKey; // Check if Shift key is held down
             startX = e.clientX;
             startY = e.clientY;
             startWidth = parseInt(document.defaultView.getComputedStyle(element).width, 10);
@@ -99,8 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function handleMouseMove(e) {
             if (isResizing) {
-                const width = startWidth + (e.clientX - startX);
-                const height = startHeight + (e.clientY - startY);
+                let width = startWidth + (e.clientX - startX);
+                let height = startHeight + (e.clientY - startY);
+
+                if (isProportional) {
+                    // Maintain 16:9 aspect ratio
+                    height = width / (16 / 9);
+                }
 
                 element.style.width = `${width}px`;
                 element.style.height = `${height}px`;
